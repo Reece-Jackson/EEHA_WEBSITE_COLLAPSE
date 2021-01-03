@@ -2843,7 +2843,7 @@ input, select, textarea {
 			}
 
 			table.alt thead {
-				border-bottom: 0;
+				border-bottom: 10;
 			}
 
 			table.alt tfoot {
