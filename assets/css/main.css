@@ -3603,10 +3603,8 @@ input, select, textarea {
 
 		#wrapper > header {
 			padding: 11em 3em 7.375em 3em ;
-			background-size: auto,
- cover;
-			background-position: center,
- 0% 0%;
+			background-size: auto,cover;
+			background-position: center,0% 0%;
 			margin-bottom: -4.75em;
 		}
 
@@ -3620,8 +3618,8 @@ input, select, textarea {
 
 		#wrapper > header {
 			padding: 6.5em 2em 3em 2em ;
-			background-size: auto,
- 125%;
+			background-size: auto,125%;
+		 	background-position: center,0% 0%;
 			margin-bottom: -2.5em;
 		}
 
@@ -3991,7 +3989,7 @@ input, select, textarea {
 					-moz-align-items: -moz-flex-start;
 					-webkit-align-items: -webkit-flex-start;
 					-ms-align-items: -ms-flex-start;
-					align-items: flex-start;
+					
 				}
 
 				.wrapper.spotlight .image {
