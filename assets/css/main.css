@@ -3700,7 +3700,7 @@ input, select, textarea {
 		.wrapper .inner {
 			padding: 0.5em 3em 0.5em 3em ;
 			margin: 0 auto;
-			width: 55em;
+			width: 700px;
 		}
 
 		.wrapper.style2 {
@@ -3815,11 +3815,13 @@ input, select, textarea {
 			}
 
 			.wrapper.spotlight .image {
-				border-radius: 100%;
-				margin: 0 3em 2em 0;
-				width: 22em;
+				border-radius: 50%;
+				margin: 0 0em 0em 0;
+				width: 18em;
+				min-width: 80px;
 				overflow: hidden;
 				-ms-flex: 1;
+				vertical-align: middle;
 			}
 
 				.wrapper.spotlight .image img {
