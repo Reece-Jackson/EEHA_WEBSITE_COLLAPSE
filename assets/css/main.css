@@ -3993,6 +3993,7 @@ input, select, textarea {
 
 				.wrapper .inner {
 					padding: 0.5em 3em 0.5em 3em ;
+					margin: 0;
 				}
 
 				.wrapper.spotlight .inner {
