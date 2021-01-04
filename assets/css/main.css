@@ -3610,6 +3610,9 @@ input, select, textarea {
 			#wrapper > header .inner {
 				width: 100%;
 			}
+		#wrapper .inner {
+			font-size: 10px;
+		}
 
 	}
 
@@ -3629,8 +3632,14 @@ input, select, textarea {
 			#wrapper > header p {
 				font-size: 0.8em;
 			}
-
+		
+		#wrapper .inner {
+			font-size: 8px;
+		}
 	}
+
+
+
 
 	.wrapper {
 		background-color: #2e3141;
