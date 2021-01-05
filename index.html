@@ -10,6 +10,7 @@
 	 [ ] Ask Tyson for his preference on collapsable vs non collapsable
 	 [ ] Portfolio Page 
 	 [x] Implement scrolling client preview (Like Pro-Lec and air website) OWL CAROUSEL
+	 [ ] Add all clients to carsousel (do after image class implementation)
 
 	SPECIFICS TO DO:
 	 [ ] Fix Mobile Sizing
@@ -19,7 +20,8 @@
 	 [ ] Clean up assets folder
 	 [ ] Clean up and comment code
 	 [ ] Ensure consistency between formatting of inner sections
-
+	 [ ] Create non-generic Image class for carousel images to ensure standard sizing
+	 [ ] Fix collapsable content going over screen on narrow screens
 -->
 <html>
 	<head>
@@ -30,29 +32,23 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
 		<link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
-		<script src="jquery-3.5.1.min.js"></script>
-		
+		<script src="jquery-3.5.1.min.js"></script>		
 	</head>
-
-	<body class="is-preload">
-	
+	<body class="is-preload">	
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
-
 				<!-- Header -->
 					<header id="header" class="alt">
 						<h1>
 						<img src = "images\EEHA.png";
 							alt = "EEHA Automation ";
-							 
-							 height=100%;
-							 width = auto >
+							height=100%;
+							width = auto >
 						</h1>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
 					</header>
-
 				<!-- Menu -->
 					<nav id="menu">
 						<div class="inner">
@@ -61,48 +57,40 @@
 								<li><a href="index.html">Home</a></li>
 								<li><a href="index.html">Services</a></li>
 								<li><a href="index.html">Clients</a></li>
-								<li><a href="index.html">Contact</a></li>
-								
+								<li><a href="index.html">Contact</a></li>								
 							</ul>
 							<style>
-								.links {
-								
-												
- 								columns: 1;
-  								-webkit-columns: 1;
-  								-moz-columns: 1;
-											
-											
+								.links {				
+									columns: 1;
+									-webkit-columns: 1;
+									-moz-columns: 1;			
 								}
 							</style>
 							<a href="#" class="close">Close</a>
 						</div>
 					</nav>
-
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
 							<div class="logo">
-								<img src = "images\EEHA.png";
-								alt = "EEHA Automation ";
-								 width=100% ;
-								 height=auto>
+								<img src = "images\EEHA.png"; alt = "EEHA Automation "; width=100% ; height=auto>
 							</div>
-							<h2> Automation and Services</h2>
-							<p>Engineering, PLC, SCADA, HMI, Networking, Automation, Drafting, Consultants, TEST. </p>
+							<h2> 
+								Automation and Services
+							</h2>
+							<p>
+								Engineering, PLC, SCADA, HMI, Networking, Automation, Drafting, Consultants, TEST. 
+							</p>
 						</div>
 					</section>
 
 				<!-- Wrapper -->
 					<section id="wrapper">
-
 						<!-- One -->
 							<section id="one" class="wrapper spotlight style1">
 								<div class="inner">
 									<a href="#" class="image"><img src="images/PLC.jpg" alt="" /></a>
-									<div class="content1">
-										
-										
+									<div class="content1">																				
 										<button type="button" class="collapsible">AUTOMATION SERVICES</button>
 										<div class="contentcolapse">
 											<br>
@@ -117,13 +105,11 @@
 													<li>Upgrading</li>
 													<li>Supporting of PLC, SCADA, HMI, MES, IT, Networking, and Reporting Systems.</li>																									
 												</ul>
-											</p>
-											
+											</p>											
 										</div>
 										<style>
 											.content1 {
-												padding-right: 3em;
-												
+												padding-right: 3em;												
 												width: 100%;
 												-ms-flex: 2;
 												vertical-align: middle;
@@ -133,56 +119,48 @@
 												padding: 0 2em;
 												padding-bottom: 1em;
 												border-bottom: solid 2px rgba(255, 255, 255, 0.125);
-												align-content: right;
-												
+												align-content: right;												
 											}
 											.contentcolapse {
-											  padding: 0 18px;
-											  background-color: rgba(255, 255, 255, 0);
-											  max-height: 0;
-											  margin-left: 3em;
-											  max-width: 30em;
-											  overflow: hidden;
-											  text-align: left;
-											  transition: max-height 0.2s ease-out;
-											  
+												padding: 0 18px;
+												background-color: rgba(255, 255, 255, 0);
+												max-height: 0;
+												margin-left: 3em;
+												max-width: 30em;
+												overflow: hidden;
+												text-align: left;
+												transition: max-height 0.2s ease-out;											  
 											}
 											.collapsible:after {
-											content: '+'; /* Unicode character for "plus" sign (+) */
-											font-size: 26px;
-											color: white;
-											
-											
-											float: right;
-											margin-left: 5px;
+												content: '+'; /* Unicode character for "plus" sign (+) */
+												font-size: 26px;
+												color: white;																						
+												float: right;
+												margin-left: 5px;
 											}
-
 											.active:after {
-											content: "-";
-											font-size: 26px; 
+												content: "-";
+												font-size: 26px; 
 											}
-											</style>
-											
-											<script>
+										</style>											
+										<script>
 											var coll = document.getElementsByClassName("collapsible");
-											var i;
-											
+											var i;												
 											for (i = 0; i < coll.length; i++) {
-											  coll[i].addEventListener("click", function() {
+											coll[i].addEventListener("click", function() {
 												this.classList.toggle("active");
 												var content = this.nextElementSibling;
 												if (content.style.maxHeight){
-												  content.style.maxHeight = null;
+												content.style.maxHeight = null;
 												} else {
-												  content.style.maxHeight = content.scrollHeight + "px";
+												content.style.maxHeight = content.scrollHeight + "px";
 												}
-											  });
+											});
 											}
-											</script>
+										</script>
 									</div>
 								</div>
 							</section>
-
 						<!-- Two -->
 							<section id="two" class="wrapper alt spotlight style2">
 								<div class="inner">
@@ -190,22 +168,23 @@
 									<div class="content2">
 										<button type="button" class="collapsible2">DRAFTING SERVICES</button>
 										<div class="contentcolapse2">										
-											<p><br>Our Services include:
+											<p>
+												<br>
+												Our Services include:
 												<ul class="columns" data-columns="2">
-												<li>P & ID Drafting</li>
-												<li>Electrical and Instrumentation Drafting</li>
-												<li>CAD Conversions</li>
-												<li>Tailored Statutory Drawing Packages</li>
-												<li>RPEQ sign off</li>
-												<li>Tracing Services</li>
-												<li>Electrical Design</li>
-												<li>As Builts</li>
-												<li>PTW “Power tools for windows’ – single line drawing maintenance</li>
-												<li>Drawing Audits</li>
-												<li>Drawing Management </li>
-												</ul>
-												
-												</p>
+													<li>P & ID Drafting</li>
+													<li>Electrical and Instrumentation Drafting</li>
+													<li>CAD Conversions</li>
+													<li>Tailored Statutory Drawing Packages</li>
+													<li>RPEQ sign off</li>
+													<li>Tracing Services</li>
+													<li>Electrical Design</li>
+													<li>As Builts</li>
+													<li>PTW “Power tools for windows’ – single line drawing maintenance</li>
+													<li>Drawing Audits</li>
+													<li>Drawing Management </li>
+												</ul>												
+											</p>
 										</div>
 										<style>
 											.content2 {
@@ -216,64 +195,53 @@
 											.collapsible2 {
 												font-size: 1em;
 												padding: 0 2em;
-												width: 20em;
-												
+												width: 20em;												
 											}
 											.contentcolapse2 {
-											  padding: 0 18px;
-											  background-color: rgba(255, 255, 255, 0);
-											  max-height: 0;
-											  overflow: hidden;
-											  text-align: left;
-											  transition: max-height 0.2s ease-out;
-											  
-											  
+												padding: 0 18px;
+												background-color: rgba(255, 255, 255, 0);
+												max-height: 0;
+												overflow: hidden;
+												text-align: left;
+												transition: max-height 0.2s ease-out;											  											  
 											}
 											.collapsible2:after {
-											content: '+'; 
-											font-size: 2em;
-											color: white;
-											
-											
-											float: right;
-											margin-left: 5px;
+												content: '+'; 
+												font-size: 2em;
+												color: white;																						
+												float: right;
+												margin-left: 5px;
 											}
-
 											.active2:after {
-											content: "-";
-											font-size: 26px;
+												content: "-";
+												font-size: 26px;
 											}
-											</style>
-											
-											<script>
+										</style>											
+										<script>
 											var coll = document.getElementsByClassName("collapsible2");
-											var i;
-											
+											var i;											
 											for (i = 0; i < coll.length; i++) {
-											  coll[i].addEventListener("click", function() {
+											coll[i].addEventListener("click", function() {
 												this.classList.toggle("active");
 												var content = this.nextElementSibling;
 												if (content.style.maxHeight){
-												  content.style.maxHeight = null;
+												content.style.maxHeight = null;
 												} else {
-												  content.style.maxHeight = content.scrollHeight + "px";
+												content.style.maxHeight = content.scrollHeight + "px";
 												}
-											  });
+											});
 											}
-											</script>
-										
-											<style>
-												ul {
- 												columns: 2;
-  												-webkit-columns: 2;
-  												-moz-columns: 2;
-					}
-											</style>
-										
+										</script>										
+										<style>
+											ul {
+												columns: 2;
+												-webkit-columns: 2;
+												-moz-columns: 2;
+											}
+										</style>										
 									</div>
 								</div>
 							</section>
-
 						<!-- Three -->
 							<section id="three" class="wrapper spotlight style3">
 								<div class="inner">
@@ -283,11 +251,9 @@
 										<div class="contentcolapse3">
 											<br>
 											<p>EEHA Services have extensive experience in Electrical Hazardous Area Management, Installation, Overhaul and Statutory Maintenance requirements, and can assist your company with development and implementation of Life cycle maintenance systems developed from first principles to meet your production and statutory obligations.
-
-												Want to know more? Visit eehas.com.au
-												
-												Contact Michael Christian on 0458-911-524 for all your project management needs.</p>
-											
+												Want to know more? Visit eehas.com.au												
+												Contact Michael Christian on 0458-911-524 for all your project management needs.
+											</p>											
 										</div>
 										<style>
 											.content3 {
@@ -297,8 +263,7 @@
 											}
 											.collapsible3 {
 												font-size: 1em;
-												padding: 0 2em;
-												
+												padding: 0 2em;												
 											}
 											.contentcolapse3 {
 											  padding: 0 18px;
@@ -306,46 +271,38 @@
 											  max-height: 0;
 											  overflow: hidden;
 											  text-align: right;
-											  transition: max-height 0.2s ease-out;
-											  
+											  transition: max-height 0.2s ease-out;											  
 											}
 											.collapsible3:after {
-											content: '+'; /* Unicode character for "plus" sign (+) */
-											font-size: 26px;
-											color: white;
-											
-											
-											float: right;
-											margin-left: 5px;
+												content: '+'; /* Unicode character for "plus" sign (+) */
+												font-size: 26px;
+												color: white;																								
+												float: right;
+												margin-left: 5px;
 											}
-
 											.active:after {
-											content: "-";
-											font-size: 0px; /* Unicode character for "minus" sign (-) */
+												content: "-";
+												font-size: 0px; /* Unicode character for "minus" sign (-) */
 											}
-											</style>
-											
-											<script>
+										</style>											
+										<script>
 											var coll = document.getElementsByClassName("collapsible3");
-											var i;
-											
+											var i;												
 											for (i = 0; i < coll.length; i++) {
-											  coll[i].addEventListener("click", function() {
+											coll[i].addEventListener("click", function() {
 												this.classList.toggle("active");
 												var content = this.nextElementSibling;
 												if (content.style.maxHeight){
-												  content.style.maxHeight = null;
+													content.style.maxHeight = null;
 												} else {
-												  content.style.maxHeight = content.scrollHeight + "px";
+													content.style.maxHeight = content.scrollHeight + "px";
 												}
-											  });
+											});
 											}
-											</script>
-										
+										</script>										
 									</div>
 								</div>
 							</section>
-
 						<!-- Four -->
 							<section id="four" class="wrapper alt style1">
 								<div class="inner">
@@ -362,20 +319,14 @@
 												autoplayTimeout:1750,
 												autoplayHoverPause:true	
 											});
-										});
-										
+										});										
 									</script>
 									<div class="owl-carousel owl-theme">
 										<div class="item"><a href="#" class="image"><img src="images/bma_logo.png" alt="BMA LOGO" style="width:100%;height:100%;" /></a></div>
 										<div class="item"><a href="#" class="image"><img src="images/glencore_logo.png" alt="" /></a></div>
 										<div class="item"><a href="#" class="image"><img src="images/anglo_logo.jpg" alt="" /></a></div>
-										<div class="item"><a href="#" class="image"><img src="images/boral_logo.jpg" alt="" /></a></div>
-								
-										
-									</div>
-									
-									
-									
+										<div class="item"><a href="#" class="image"><img src="images/boral_logo.jpg" alt="" /></a></div>																		
+									</div>								
 									<!-- <section class="features">
 										<article>
 											<a href="#" class="image"><img src="images/bma_logo.png" alt="BMA LOGO" style="width:100%;height:100%;" /></a>
@@ -407,7 +358,6 @@
 									</ul>
 								</div>
 							</section>
-
 					</section>
 
 				<!-- Footer -->
