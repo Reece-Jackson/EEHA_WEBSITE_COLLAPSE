@@ -3957,6 +3957,7 @@ input, select, textarea {
 				.wrapper .inner {
 					padding: 0.5em 5em 0.5em 5em ;
 					width: 100%;
+					min-width: 300px;
 				}
 
 				.wrapper.spotlight .image {
@@ -3994,6 +3995,7 @@ input, select, textarea {
 				.wrapper .inner {
 					padding: 0.5em 3em 0.5em 3em ;
 					margin: 0;
+					min-width: 200px;
 				}
 
 				.wrapper.spotlight .inner {
@@ -4020,17 +4022,20 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			.wrapper.spotlight .inner {
-				display: block;
+				display: inline-flex;
 			}
 
 			.wrapper.spotlight .image {
-				margin: 0 0 1em 0 !important;
+				margin: 0 0 0em 0 !important;
 				max-width: 20%;
 				width: 18em;
-				min-width: 120px
+				min-width: 80px
 				
 			}
-			
+			.wrapper .inner {
+				
+				min-width: 0px;
+			}
 
 		}
 
@@ -4038,6 +4043,7 @@ input, select, textarea {
 
 			.wrapper .inner {
 				padding: 0.5em 1.5em 0.5em 1.5em ;
+				position: relative;
 			}
 
 		}
