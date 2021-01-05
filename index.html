@@ -9,7 +9,7 @@
 	 [ ] Ask Tyson what sections to include (drafting etc)
 	 [ ] Ask Tyson for his preference on collapsable vs non collapsable
 	 [ ] Portfolio Page 
-	 [ ] Implement scrolling client preview (Like Pro-Lec and air website) OWL CAROUSEL
+	 [x] Implement scrolling client preview (Like Pro-Lec and air website) OWL CAROUSEL
 
 	SPECIFICS TO DO:
 	 [ ] Fix Mobile Sizing
@@ -28,6 +28,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
+		<script src="jquery-3.5.1.min.js"></script>
+		
 	</head>
 
 	<body class="is-preload">
@@ -119,6 +123,7 @@
 										<style>
 											.content1 {
 												padding-right: 3em;
+												
 												width: 100%;
 												-ms-flex: 2;
 												vertical-align: middle;
@@ -127,13 +132,16 @@
 												font-size: 1em;
 												padding: 0 2em;
 												padding-bottom: 1em;
-    											border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+												border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+												align-content: right;
 												
 											}
 											.contentcolapse {
 											  padding: 0 18px;
 											  background-color: rgba(255, 255, 255, 0);
 											  max-height: 0;
+											  margin-left: 3em;
+											  max-width: 30em;
 											  overflow: hidden;
 											  text-align: left;
 											  transition: max-height 0.2s ease-out;
@@ -313,7 +321,7 @@
 
 											.active:after {
 											content: "-";
-											font-size: 26px; /* Unicode character for "minus" sign (-) */
+											font-size: 0px; /* Unicode character for "minus" sign (-) */
 											}
 											</style>
 											
@@ -343,7 +351,32 @@
 								<div class="inner">
 									<h2 class="major">OUR CLIENTS</h2>
 									<p>Insert spiel about types of jobs we do for clients and perhaps the other industries that EEHA is in.</p>
-									<section class="features">
+									<!-- Set up your HTML -->
+									<script>
+										$(document).ready(function(){
+											$(".owl-carousel").owlCarousel({
+												items:4,
+												loop:true,
+												margin:5,
+												autoplay:true,
+												autoplayTimeout:1750,
+												autoplayHoverPause:true	
+											});
+										});
+										
+									</script>
+									<div class="owl-carousel owl-theme">
+										<div class="item"><a href="#" class="image"><img src="images/bma_logo.png" alt="BMA LOGO" style="width:100%;height:100%;" /></a></div>
+										<div class="item"><a href="#" class="image"><img src="images/glencore_logo.png" alt="" /></a></div>
+										<div class="item"><a href="#" class="image"><img src="images/anglo_logo.jpg" alt="" /></a></div>
+										<div class="item"><a href="#" class="image"><img src="images/boral_logo.jpg" alt="" /></a></div>
+								
+										
+									</div>
+									
+									
+									
+									<!-- <section class="features">
 										<article>
 											<a href="#" class="image"><img src="images/bma_logo.png" alt="BMA LOGO" style="width:100%;height:100%;" /></a>
 											<h3 class="major">BMA: BHP Mitsui Aliance</h3>
@@ -368,7 +401,7 @@
 											<p>Section detailing interactions with client and current/future projects and areas of involvement.</p>
 											
 										</article>
-									</section>
+									</section> -->
 									<ul class="actions">
 										<li><a href="portfolio.html" class="button">Browse All/See Portfolio</a></li>
 									</ul>
@@ -437,6 +470,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<script src="owlcarousel/owl.carousel.min.js"></script>
 
 	</body>
 </html>
