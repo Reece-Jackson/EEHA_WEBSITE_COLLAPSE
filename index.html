@@ -1,28 +1,31 @@
 <!DOCTYPE HTML>
 <!--
 	EEHA AUTOMATION WEBSITE - 
-	Entirely royalty Free images/templates used
-	Updated : 04/01/2021
+	Updated : 05/01/2021
 	- Reece Jackson
 
 	THINGS TO DO:
+	 [x] Implement scrolling client preview (Like Pro-Lec and air website) OWL CAROUSEL
 	 [ ] Ask Tyson what sections to include (drafting etc)
 	 [ ] Ask Tyson for his preference on collapsable vs non collapsable
 	 [ ] Portfolio Page 
-	 [x] Implement scrolling client preview (Like Pro-Lec and air website) OWL CAROUSEL
 	 [ ] Add all clients to carsousel (do after image class implementation)
 
 	SPECIFICS TO DO:
 	 [x] Fix Mobile Sizing
 	 [x] Decide on and fix text spacing for body section
-	 [ ] Implement 'contact us' email functionality 
-	 [x] Fix scroll up banner glitch\
-	 [ ] Clean up assets folder
+	 [x] Fix scroll up banner glitch
 	 [x] Clean up code
-	 [ ] Comment code
 	 [x] Ensure consistency between formatting of inner sections
-	 [ ] Create non-generic Image class for carousel images to ensure standard sizing
 	 [x] Fix collapsable content going over screen on narrow screens
+	 [x] Reduce padding to the sides of images on mobile
+	 [ ] Implement 'contact us' email functionality 
+	 [ ] Create non-generic Image class for carousel images to ensure standard sizing
+	 
+	 POLISHING TO DO:
+	 [ ] Add in extensive inter document hyperlinking
+	 [ ] Comment code
+	 [ ] Clean up assets folder
 -->
 <html>
 	<head>
@@ -313,6 +316,7 @@
 									<script>
 										$(document).ready(function(){
 											$(".owl-carousel").owlCarousel({
+												
 												items:4,
 												loop:true,
 												margin:5,
@@ -327,7 +331,13 @@
 										<div class="item"><a href="#" class="clientimage"><img src="images/glencore_logo.png" alt="" /></a></div>
 										<div class="item"><a href="#" class="clientimage"><img src="images/anglo_logo.jpg" alt="" /></a></div>
 										<div class="item"><a href="#" class="clientimage"><img src="images/boral_logo.jpg" alt="" /></a></div>																		
-									</div>								
+									</div>		
+									<style>
+										.clientimage {
+											width: 20em;
+										}
+									</style>
+
 									<!-- <section class="features">
 										<article>
 											<a href="#" class="image"><img src="images/bma_logo.png" alt="BMA LOGO" style="width:100%;height:100%;" /></a>
@@ -398,14 +408,10 @@
 								<li class="icon brands fa-linkedin-in"><a href="https://www.linkedin.com/company/eeha-automation/">linkedin.com/eeha-automation</a></li>
 							</ul>
 							<style>
-								.contact {
-								
-												
- 								columns: 1;
-  								-webkit-columns: 1;
-  								-moz-columns: 1;
-											
-											
+								.contact {																				
+									columns: 1;
+									-webkit-columns: 1;
+									-moz-columns: 1;											
 								}
 							</style>
 
