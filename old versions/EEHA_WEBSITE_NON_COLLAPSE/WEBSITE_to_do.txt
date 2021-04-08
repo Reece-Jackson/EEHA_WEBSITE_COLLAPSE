@@ -1,0 +1,14 @@
+WEB DEV TO DO:
+
+Services pictures and paragraph formatting
+Clients Logo and potential Spiel (ask ADAM for preference)
+Update contact details and investigate automatic email sender for inquiries
+Implement pages for each of the services 
+Implement page for pricing
+Fix and comment code
+change any referencing to solid state
+implement proper menu bar with inter-site links
+Ask/find higher resolution logo photo/design one
+ask about color pallet and change if necesary
+peruse other templates for better ideas.
+
